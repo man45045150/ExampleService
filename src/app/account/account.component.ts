@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { LoggingService } from '../logging.service';
 import { AccountsService } from '../accounts.service';
@@ -9,12 +9,18 @@ import { AccountsService } from '../accounts.service';
   styleUrls: ['./account.component.css'],
   // providers: [LoggingService]
 })
-export class AccountComponent {
+export class AccountComponent implements OnInit {
+
+  status = '';
   @Input() account: {name: string, status: string};
   @Input() id: number;
 
   constructor(private loggingService: LoggingService,
-              private accountsService: AccountsService) {}
+              private accountsService: AccountsService) {
+  }
+  ngOnInit(): void {
+    this.status = this.account.status;
+  }
 
   onSetTo(status: string) {
     this.accountsService.updateStatus(this.id, status);
