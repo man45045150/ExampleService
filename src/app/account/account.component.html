@@ -3,7 +3,7 @@
     <h5>{{ account.name }}</h5>
     <hr>
     <p>This account is {{ account.status }}</p>
-    <button class="btn" [ngClass]="{'btn-success': status=='active'}"  (click)="onSetTo('active')">Set to 'active'</button>
+    <button class="btn" [ngClass]="status=='active'? 'btn-success':'btn-default'"  (click)="onSetTo('active')">Set to 'active'</button>
     <button class="btn" [ngClass]="{'btn-success': status=='inactive'}" (click)="onSetTo('inactive')">Set to 'inactive'</button>
     <button class="btn" [ngClass]="{'btn-success': status=='unknown'}" (click)="onSetTo('unknown')">Set to 'unknown'</button>
   </div>

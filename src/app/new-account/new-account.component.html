@@ -11,9 +11,10 @@
       <select class="form-control" #status>
         <option value="active">Active</option>
         <option value="inactive">Inactive</option>
-        <option value="hidden">Hidden</option>
+        <option value="unknown">Hidden</option>
       </select>
     </div>
+    <!--#accountName & #status is one-way-binding -->
     <button
       class="btn btn-primary"
       (click)="onCreateAccount(accountName.value, status.value)">

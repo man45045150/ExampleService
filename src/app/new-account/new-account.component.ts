@@ -13,6 +13,8 @@ export class NewAccountComponent {
 
   constructor(private loggingService: LoggingService,
               private accountsService: AccountsService) {
+    //Reactive event
+    //when this.accountsService.statusUpdated changed do something
     this.accountsService.statusUpdated.subscribe(
       (status: string) => alert('New Status: ' + status)
     );

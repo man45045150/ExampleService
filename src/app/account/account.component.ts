@@ -26,6 +26,7 @@ export class AccountComponent implements OnInit {
     this.accountsService.updateStatus(this.id, status);
     // this.loggingService.logStatusChange(status);
     this.status = status;
+    //make Reactive event
     this.accountsService.statusUpdated.emit(status);
   }
 }
