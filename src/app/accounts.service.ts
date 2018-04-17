@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
 import { LoggingService } from './logging.service';
-
+//account service can Injectable สามารถถูก Inject ได้
 @Injectable()
 export class AccountsService {
   accounts = [
